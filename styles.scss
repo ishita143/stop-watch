@@ -1,0 +1,49 @@
+$blue: #17D4EF;
+$white: #FFF;
+
+@mixin corners($radius) {
+    border-radius: $radius;
+}
+
+@mixin transition{
+    transition: all 0.5s ease-in-out; 
+}
+
+body{
+    background-color: $blue;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.wrapper{
+    color: $white;
+    text-align: center;
+
+    h1{
+        font-family: 'Roboto', sans-serif;
+        font-size: 60px;
+        font-weight: 100;
+    }
+
+    #seconds, #tens{
+        font-size: 52px;
+    }
+
+    button{
+        @include corners(5px);
+        background-color: $blue;
+        color: $white;
+        font-size: 16px;
+        margin: 10px;
+        padding: 18px 10px;
+        width: 180px;
+        cursor: pointer;
+        border: 1px solid $white;
+
+        &:hover{
+            @include transition;
+            background-color: $white;
+            color: $blue;
+            border: 1px solid $white;
+        }
+    }
+}
